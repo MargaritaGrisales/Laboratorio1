@@ -4,13 +4,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sobre Mi</title>
+    <link rel="stylesheet" href="styles.css" type="text/css" />
   </head>
   <body>
     <h1 align="center">SOBRE MI</h1>
     <h2 align="center">Margarita María Grisales Tonuzco</h2>
     <h3 align="center">¿Quién soy yo?</h3>
 
-    <div
+    <div class="principal"
       style="
         text-align: left;
         display: flex;
@@ -68,9 +69,12 @@
           <li>Aprender inglés</li>
         </ol>
       </div>
-      <div style="text-align: center; margin-top: 30px;">
+      <div style="text-align: center; margin-top: 30px">
         <h3>Horario de la semana:</h3>
-        <table border="1" style="border-collapse: collapse; margin: 0 auto; text-align: center;">
+        <table
+          border="1"
+          style="border-collapse: collapse; margin: 0 auto; text-align: center"
+        >
           <thead>
             <tr>
               <th>Día</th>
@@ -93,6 +97,18 @@
           </tbody>
         </table>
       </div>
+    </div>
+    <div style="text-align: center; margin-top: 30px">
+      <h3>Formulario:</h3>
+      <form>
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" required /><br />
+        <label for="motivo">Motivo de contacto:</label>
+        <input type="text" id="motivo" name="motivo" required /><br />
+        <label for="correo">Correo de contacto:</label>
+        <input type="email" id="correo" name="correo" required /><br />
+        <button type="submit">Enviar</button>
+      </form>
     </div>
   </body>
 </html>
