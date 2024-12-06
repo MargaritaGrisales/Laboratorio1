@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculadora</title>
+  </head>
+  <body>
+    <script>
+      // Paso 1: Función que realiza las operaciones
+      function realizarOperacion(num1, num2, operacion) {
+        if (operacion === "suma") {
+          return num1 + num2;
+        } else if (operacion === "resta") {
+          return num1 - num2;
+        } else if (operacion === "multiplicacion") {
+          return num1 * num2;
+        } else if (operacion === "division") {
+          if (num2 === 0) {
+            return "Error: No se puede dividir por 0";
+          }
+          return num1 / num2;
+        } else {
+          return "Error: Operación no válida";
+        }
+      }
+
+      // Paso 2: Inicializamos una variable para controlar el bucle
+      let continuar = true;
+
+      // Paso 3: Bucle "while" para seguir preguntando al usuario
+      while (continuar) {
+        // Pedimos los dos números al usuario
+        let num1 = parseFloat(prompt("Ingresa el primer número:"));
+        let num2 = parseFloat(prompt("Ingresa el segundo número:"));
+
+        // Pedimos qué operación quiere hacer
+        let operacion = prompt("¿Qué operación deseas realizar? (suma, resta, multiplicación, división)").toLowerCase();
+
+        // Paso 4: Llamamos a la función que hace la operación y mostramos el resultado
+        let resultado = realizarOperacion(num1, num2, operacion);
+        alert("El resultado es: " + resultado);
+
+        // Paso 5: Preguntamos al usuario si quiere continuar
+        let respuesta = prompt("¿Quieres hacer otra operación? Escribe 'salir' para terminar o presiona Enter para continuar").toLowerCase();
+
+        // Si la respuesta es "salir", cambiamos la variable "continuar" a false
+        if (respuesta === "salir") {
+          continuar = false;  // Esto detendrá el bucle
+          alert("¡Gracias por usar la calculadora!");  // Mensaje de despedida
+        }
+      }
+    </script>
+  </body>
+</html>
